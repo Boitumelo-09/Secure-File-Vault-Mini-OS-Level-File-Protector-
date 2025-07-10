@@ -36,12 +36,37 @@ private:
     bool isLocked;
 
 public:
-    File(std::string name, std::string type, double size); // Constructor
-    std::string getName() const;
-    std::string getType() const;
-    double getSize() const;
-    std::string getDate() const;
-    bool getLockStatus() const;
+    File(std::string name, std::string type, double size);
+
+    void setAll(std::string name, std::string type, double sizeMB, std::string createdDate, bool isLocked)
+    {
+        this->name = name;
+        this->type = type;
+        this->sizeMB = sizeMB;
+        this->createdDate = createdDate;
+        this->isLocked = isLocked;
+    }
+
+    std::string getName()
+    {
+        return name;
+    };
+    std::string getType()
+    {
+        return type;
+    };
+    double getSize()
+    {
+        return sizeMB;
+    };
+    std::string getDate()
+    {
+        return createdDate;
+    };
+    bool getLockStatus()
+    {
+        return isLocked;
+    };
 
     void renameFile(std::string newName);
     void toggleLock();
